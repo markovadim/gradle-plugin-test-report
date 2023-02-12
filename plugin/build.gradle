@@ -1,0 +1,23 @@
+plugins {
+    id 'java-gradle-plugin'
+    id 'groovy'
+    id 'maven-publish'
+}
+version '0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+}
+
+gradlePlugin {
+    plugins {
+        checkTestReport {
+            id = 'ru.clevertec.testreportplugin.checkTestReport'
+            implementationClass = 'ru.clevertec.testreportplugin.GradlePluginTestReportPlugin'
+        }
+    }
+}
